@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by anonymous (http://jsbin.com/xizowotewa/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>TARGET</title>
+</head>
+<body>
+  You will have <input type="number" id="SECONDS" value=20> seconds to memorise eight words.
+  <br>
+  <br>
+  <button onclick="gen_random()">Generate (Random)</button>
+  <button onclick="gen_matching()">Generate (Matching)</button>
+  <button onclick="restore_output()">Restore</button>
+
+<div id="output" style="font-size:28px; font-weight:bold">
+</div>
+
+<script id="jsbin-javascript">
+function pick_a_random_color() {
+  var rand = Math.random()*5;
+  if (rand<1){
+    return "blue"
+  }
+  else if (rand<2){
+    return "red"
+  }
+  else if (rand<3){
+    return "green"
+  }
+  else if (rand<4){
+    return "yellow"
+  }
+  else{
+    return "purple"
+  }
+}
+
+function gen_random(){
+  timespan = document.getElementById("SECONDS").value;
+  
+  textoutput="";
+  
+  textoutput=textoutput+"<span style='color:"+pick_a_random_color()+"'> "+pick_a_random_color()+"</span>";
+  textoutput=textoutput+"<span style='color:"+pick_a_random_color()+"'> "+pick_a_random_color()+"</span>";
+  textoutput=textoutput+"<span style='color:"+pick_a_random_color()+"'> "+pick_a_random_color()+"</span>";
+  textoutput=textoutput+"<span style='color:"+pick_a_random_color()+"'> "+pick_a_random_color()+"</span>";
+  textoutput=textoutput+"<span style='color:"+pick_a_random_color()+"'> "+pick_a_random_color()+"</span>";
+  textoutput=textoutput+"<span style='color:"+pick_a_random_color()+"'> "+pick_a_random_color()+"</span>";
+  textoutput=textoutput+"<span style='color:"+pick_a_random_color()+"'> "+pick_a_random_color()+"</span>";
+  textoutput=textoutput+"<span style='color:"+pick_a_random_color()+"'> "+pick_a_random_color()+"</span>";
+  
+
+  
+  document.getElementById("output").innerHTML = textoutput;
+  setTimeout(clear_output, timespan*1000);
+}
+
+function gen_matching(){
+  timespan = document.getElementById("SECONDS").value;
+  
+  textoutput="";
+  
+  the_color=pick_a_random_color();
+  textoutput=textoutput+"<span style='color:"+the_color+"'> "+the_color+"</span>";
+  the_color=pick_a_random_color();
+  textoutput=textoutput+"<span style='color:"+the_color+"'> "+the_color+"</span>";
+  the_color=pick_a_random_color();
+  textoutput=textoutput+"<span style='color:"+the_color+"'> "+the_color+"</span>";
+  the_color=pick_a_random_color();
+  textoutput=textoutput+"<span style='color:"+the_color+"'> "+the_color+"</span>";
+  the_color=pick_a_random_color();
+  textoutput=textoutput+"<span style='color:"+the_color+"'> "+the_color+"</span>";
+  the_color=pick_a_random_color();
+  textoutput=textoutput+"<span style='color:"+the_color+"'> "+the_color+"</span>";
+  the_color=pick_a_random_color();
+  textoutput=textoutput+"<span style='color:"+the_color+"'> "+the_color+"</span>";
+  the_color=pick_a_random_color();
+  textoutput=textoutput+"<span style='color:"+the_color+"'> "+the_color+"</span>";
+
+
+
+
+  
+  document.getElementById("output").innerHTML = textoutput;
+  setTimeout(clear_output, timespan*1000);
+}
+
+function clear_output(){
+  document.getElementById("output").innerHTML = "";
+}
+
+function restore_output(){
+  document.getElementById("output").innerHTML = textoutput;
+}
+
+</script>
+</body>
+</html>
